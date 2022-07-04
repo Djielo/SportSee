@@ -1,23 +1,26 @@
-![Logo of the project](https://raw.githubusercontent.com/jehna/readme-best-practices/master/sample-logo.png)
+![Logo of the project](https://github.com/Djielo/SportSee/blob/master/src/assets/logo.png)
 
-# Name of the project
-> Additional information or tagline
+# SportSee
+> Startup dedicated to sports coaching
 
-A brief description of your project, what it is used for and how does life get
-awesome when someone starts to use it.
+In full growth, the company will today launch a new version of the user profile page. This page will in particular allow the user to follow the number of sessions carried out as well as the number of calories burned.
+
+## Prerequisites.
+
+The prerequisites for installing and viewing our application
+
+```
+- A code editor (this guide is based on Visual Studio Code)
+- The browser of your choice (Optimized for Chrome and Firefox)
+```
 
 ## Installing / Getting started
 
-A quick introduction of the minimal setup you need to get a hello world up &
-running.
+#### Installation
 
-```shell
-packagemanager install awesome-project
-awesome-project start
-awesome-project "Do something!"  # prints "Nah."
-```
-
-Here you should say what actually happens when you execute the code above.
+1- Ouvrez VSCode
+2- Si ce n'est pas déjà fait, fermez tous les dossiers en cours.
+3- 
 
 ### Initial Configuration
 
