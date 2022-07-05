@@ -1,3 +1,4 @@
+![](src/assets/logo.png)
 <img src="src/assets/logo.png" width="200">
 
 # SportSee
