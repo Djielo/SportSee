@@ -1,0 +1,48 @@
+.graph1 {
+  background-color: #eec9c9;
+  border-radius: 5px;
+  width: 835px;
+  height: 320px;
+  margin-bottom: 28px;
+
+  .graph1_header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 25px 0 25px;
+
+    .title {
+      font-size: 15px;
+      font-weight: 500;
+    }
+
+    .legend {
+      display: flex;
+      align-items: center;
+
+      .legend_weight,
+      .legend_calories_burned {
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        font-weight: 500;
+        color: #74798c;
+        height: 8px;
+        
+        .lengend_image {
+          padding: 0 10px 0 10px;
+        }
+      }
+
+      .legend_weight {
+      }
+
+      .legend_calories_burned {
+      }
+    }
+  }
+  .graph1_barChart_activity {
+    height: 196px;
+    background-color: aquamarine;
+    margin: 0 35px 0 35px;
+  }
+}

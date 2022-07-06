@@ -1,0 +1,26 @@
+.home_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(1024px - 91px);
+  width: calc(1440px - 117px);
+
+  .home_main_contents {
+    height: 779px;
+    width: 1126px;
+
+    .contents_all_datas {
+      display: flex;
+      gap: 31px;
+
+      .datas_graphs {
+        gap: 28px;
+      }
+    }
+  }
+}
+
+.performance {
+  display: flex;
+  gap: 30px;
+}
