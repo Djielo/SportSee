@@ -1,6 +1,7 @@
 import React from "react";
 import OvalWeight from "../../assets/oval_weight.png";
 import OvalBurned from "../../assets/oval_burned.png";
+import Graph1BarChartActivity from "../Graph1BarChartActivity/Graph1BarChartActivity";
 
 const Graph1 = () => {
   return (
@@ -18,7 +19,7 @@ const Graph1 = () => {
           </div>
         </div>
       </div>
-      <div className="graph1_barChart_activity"></div>
+      <Graph1BarChartActivity/>
     </div>
   );
 };
