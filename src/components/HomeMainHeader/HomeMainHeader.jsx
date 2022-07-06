@@ -1,6 +1,6 @@
 import React from "react";
 
-const HeaderHomeMain = () => {
+const HomeMainHeader = () => {
   return (
     <div className="header_home_main">
       <h1 className="title">
@@ -11,4 +11,4 @@ const HeaderHomeMain = () => {
   );
 };
 
-export default HeaderHomeMain;
+export default HomeMainHeader;

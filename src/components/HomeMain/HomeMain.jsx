@@ -1,5 +1,5 @@
 import React from "react";
-import HeaderHomeMain from "../HeaderHomeMain/HeaderHomeMain";
+import HomeMainHeader from "../HomeMainHeader/HomeMainHeader";
 import Graph1 from "../Graph1/Graph1";
 import Graph2 from "../Graph2/Graph2";
 import Graph3 from "../Graph3/Graph3";
@@ -10,7 +10,7 @@ const HomeMain = () => {
   return (
     <div className="home_main">
       <div className="home_main_contents">
-        <HeaderHomeMain />
+        <HomeMainHeader />
         <div className="contents_all_datas">
           <div className="datas_graphs">
             <Graph1 />

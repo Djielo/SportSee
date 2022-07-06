@@ -7,14 +7,14 @@ const Graph1 = () => {
   return (
     <div className="graph1">
       <div className="graph1_header">
-        <h4 className="title">Activité quotidienne</h4>
-        <div className="legend">
+        <h4 className="header_title">Activité quotidienne</h4>
+        <div className="header_legend">
           <div className="legend_weight">
-            <img className="lengend_image" src={OvalWeight} alt="" />
+            <img className="legend_image" src={OvalWeight} alt="" />
             <p className="legend_text">Poids (kg)</p>
           </div>
           <div className="legend_calories_burned">
-            <img className="lengend_image" src={OvalBurned} alt="" />
+            <img className="legend_image" src={OvalBurned} alt="" />
             <p className="legend_text">Calories brûlées (kCal)</p>
           </div>
         </div>

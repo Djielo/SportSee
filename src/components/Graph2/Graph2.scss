@@ -1,5 +1,29 @@
 .graph2 {
-  background-color: rgb(143, 91, 22);
+  background-color: #ff0000;
   width: 258px;
   height: 263px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  grid-template-areas: "superpose";
+
+  .graph2_title {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 30px;
+    width: 200px;
+  }
+
+  .graph2_all_days {
+    display: flex;
+    justify-content: space-around;
+    .graph2_days {
+      color: white;
+      font-size: 12px;
+      font-weight: 500;
+      padding: 10px;
+    }
+  }
 }

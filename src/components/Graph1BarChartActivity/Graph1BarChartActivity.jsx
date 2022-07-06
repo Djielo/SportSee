@@ -1,4 +1,3 @@
-import "../../components/Graph1BarChartActivity/Graph1BarChartActivity.scss";
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 

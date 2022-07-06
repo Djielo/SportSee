@@ -1,10 +1,10 @@
 import React from "react";
-import VerticalBar from "../../components/VerticalBar/VerticalBar";
+import HomeVerticalFooter from "../../components/HomeVerticalFooter/HomeVerticalFooter";
 import HomeMain from "../../components/HomeMain/HomeMain";
 
 const Home = () => {
   return <div className="home_container">
-    <VerticalBar/>
+    <HomeVerticalFooter/>
     <HomeMain/>
   </div>;
 };
