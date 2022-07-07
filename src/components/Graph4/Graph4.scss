@@ -1,5 +1,13 @@
-.graph4 {
-  background-color: rgb(80, 48, 7);
+.graph4 {  
   width: 258px;
   height: 263px;
+  position: relative;
+
+  .graph4_title {
+    fill: black;
+  }
+
+  .graph4_radial tspan {
+    fill: black;
+  }
 }

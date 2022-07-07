@@ -1,5 +1,12 @@
 .graph3 {
-  background-color: rgb(116, 73, 18);
+  background-color: #282d30;
   width: 258px;
   height: 263px;
+  border-radius: 5px; 
+
+  .graph3_radar tspan {
+    fill: white;
+    font-size: 12px;
+    font-weight: 500;
+  }
 }
