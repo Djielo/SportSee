@@ -1,10 +1,33 @@
-.graph4 {  
+.graph4 {
   width: 258px;
   height: 263px;
-  position: relative;
-
-  .graph4_title {
+  position: relative;  
+  
+  span {
+    position: absolute;
+    top: 8%;
+    left: 10%;
+    font-size: 15px;
+    font-weight: 500;
     fill: black;
+  }
+  
+  .graph4_score {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    font-size: 26px;
+    font-weight: 500;
+  }
+
+  .graph4_text {
+    position: absolute;
+    top: 57%;    
+    left: 48%;    
+    width: 60px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #74798c;
   }
 
   .graph4_radial tspan {

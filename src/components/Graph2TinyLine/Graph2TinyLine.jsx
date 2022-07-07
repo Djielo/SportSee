@@ -37,7 +37,7 @@ export default function Graph2TinyLine () {
     <ResponsiveContainer width="100%" height="100%">
       <LineChart className="graph2_tinyline" width={300} height={100} data={data}>
         <XAxis dataKey="name" stroke={""} padding={{ left: 10, right: 10 }} />
-        <Line type="natural" dataKey="pv" stroke="#fff" strokeWidth={2} dot={false} activeDot={{ r: 4 }}/>
+        <Line type="natural" dataKey="pv" stroke="#fff" strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
         <Tooltip cursor={false} data={data.pv} />
       </LineChart>
     </ResponsiveContainer>

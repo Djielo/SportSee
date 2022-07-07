@@ -6,9 +6,10 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 5px;
+  // background: linear-gradient(270deg, rgba(255, 255, 255, 0.021) 0%, rgba(0, 0, 0, 0.212) 25%, rgba(0, 0, 0, 0) 100%);
 
   .graph2_title {
-    color: white;
+    color: #ffffff70;
     font-size: 15px;
     font-weight: 500;
     padding: 30px;
@@ -16,7 +17,7 @@
   }
 
   .graph2_tinyline tspan {
-    fill: white;
+    fill: #ffffff70;
     font-size: 12px;
     font-weight: 500;
     padding: 10px;

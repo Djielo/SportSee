@@ -4,7 +4,7 @@ import Graph4Radial from "../Graph4Radial/Graph4Radial";
 const Graph4 = () => {
   return (
     <div className="graph4">
-      <h2 className="graph4_title">SCORE</h2>
+      <p className="graph4_text">de votre objectif</p>
       <Graph4Radial />
     </div>
   );

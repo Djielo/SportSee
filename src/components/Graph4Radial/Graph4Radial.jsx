@@ -1,36 +1,49 @@
-import React, { PureComponent } from "react";
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from "recharts";
+import React from "react";
+import { RadialBarChart, PolarAngleAxis, RadialBar, Legend } from "recharts";
 
 const data = [
   {
-    name: "18-24",
     uv: 12,
+    pv: 100,
     fill: "#ff0000",
   },
 ];
 
 const style = {
-  top: "50%",
-  right: 0,
-  transform: "translate(0, -80%)",
+  top: 20,
+  lineHeight: "24px",
+};
+
+const ContentLegend = () => {
+  return <span> Score </span>;
 };
 
 export default function Graph4Radial() {
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RadialBarChart
-        className="graph4_radial"
-        cx="50%"
-        cy="50%"
-        innerRadius="60%"
-        outerRadius="80%"
-        barSize={10}
-        data={data}
-        startAngle={60}
-        endAngle={220}
-      >
-        <RadialBar minAngle={15} background clockWise dataKey="uv" cornerRadius={25} />
-      </RadialBarChart>
-    </ResponsiveContainer>
+    <RadialBarChart
+      className="graph4_radial"
+      width={500}
+      height={300}
+      cx={150}
+      cy={150}
+      innerRadius={80}
+      outerRadius={340}
+      barSize={10}
+      startAngle={-270}
+      endAngle={90}
+      data={data}
+    >
+      <PolarAngleAxis type="number" domain={[0, 100]} angleAxisId={0} tick={false} />
+      <RadialBar
+        className="graph4_score"
+        minAngle={15}
+        label={{ position: "center", fill: "#000" }}
+        background
+        clockWise
+        dataKey="uv"
+        cornerRadius={25}
+      />
+      <Legend iconSize={0} width={500} height={300} layout="vertical" verticalAlign="middle" wrapperStyle={style} content={ContentLegend} />
+    </RadialBarChart>
   );
 }
