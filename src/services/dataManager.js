@@ -10,18 +10,14 @@ import mockedData from "./mockedData";
  * extractFromMockedData function.
  */
 
-
-
-
-
-async function getData(userId,mocked){
-  if (mocked){
+async function getData(userId, mocked) {
+  
+  if (mocked) {
     return {
-        userMain:extractFromMockedData(userId, mockedData.USER_MAIN_DATA),
-    }
+      userMain: extractFromMockedData(userId, mockedData.USER_MAIN_DATA),
+    };
   }
   //
-
 }
 
 /**
@@ -29,7 +25,7 @@ async function getData(userId,mocked){
  *
  * @param   {Number}  userId  [userId description]
  * @param   {Object}  data    [data description]
- *
+ * 
  * @return  {[type]}          [return description]
  */
 
@@ -38,13 +34,15 @@ async function getData(userId,mocked){
  * as the one passed in
  * @param userId - The userId of the user you want to extract data from
  * @param data - the mocked data
+ * 
  * @returns An array of objects that match the userId.
  */
 
-function extractFromMockedData(userId, data){
-    return data.filter(data=> {if (data.userId === userId) return data})
+function extractFromMockedData(userId, data) {
+  console.log(extractFromMockedData)
+  return data.filter((data) => {
+    if (data.userId === userId) return data;
+  });
 }
 
-export {
-    getData
-}
+export { getData };

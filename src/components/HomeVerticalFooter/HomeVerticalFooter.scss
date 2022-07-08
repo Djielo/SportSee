@@ -1,13 +1,33 @@
-.vetical_bar {
-  background-color: black;
-  height: calc(1024px - 91px);
-  width: 117px;
+.vertical_bar {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+position: relative;
+  background-color: black;
+  height: calc(1024px - 91px);
+  width: 117px;
 
-  .icon_vertical_bar {
-    padding-bottom: 20px;
+  .nav_vertical_bar {
+    position: absolute;
+    bottom: 360px;
+    display: flex;
+    flex-direction: column;    
+
+    .icon_vertical_bar {
+      padding-top: 25px;
+    }
+  }
+
+  .text_vertical_bar {
+    position: absolute;
+    bottom: 110px;
+    width: 138px;
+    height: 24px;
+
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    transform: rotate(270deg);
   }
 }
