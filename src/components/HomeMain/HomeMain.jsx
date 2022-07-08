@@ -4,7 +4,7 @@ import Graph1 from "../Graph1/Graph1";
 import Graph2 from "../Graph2/Graph2";
 import Graph3 from "../Graph3/Graph3";
 import Graph4 from "../Graph4/Graph4";
-import Datas from "../Datas/Datas";
+import DataCards from "../DatasCards/DatasCards";
 
 const HomeMain = () => {
   return (
@@ -20,7 +20,7 @@ const HomeMain = () => {
               <Graph4 />
             </div>
           </div>
-          <Datas />
+          <DataCards />
         </div>
       </div>
     </div>

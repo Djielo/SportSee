@@ -40,6 +40,20 @@ const data = [
   },
 ];
 
+const CustomizedTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom_tooltip_graph1">
+        <p className="label_graph1_1">{`${payload[0].value}`}</p>
+        <p className="label_graph1_2">{`${payload[1].value}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
+
+
 export default function Graph1BarChartActivity() {
   return (
     <ResponsiveContainer width="100%" aspect={3}>
@@ -56,11 +70,16 @@ export default function Graph1BarChartActivity() {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
-        <XAxis dataKey="name" tickLine={false} tickSize={15} scale={"point"} padding={{left: 10.2, right: 8.2}} />        
+        <XAxis dataKey="name" tickLine={false} tickSize={15} scale={"point"} padding={{ left: 10.2, right: 8.2 }} />
         <YAxis orientation="right" domain={[69, 71]} tickCount={3} stroke={""} tickSize={40} />
-        <Tooltip cursor="C4C4C480" />
+
+        <Tooltip content={<CustomizedTooltip />} cursor={false} />
+
+        {/* <Tooltip contentStyle={{ backgroundColor: "#e60000", color: "#fff" }} itemStyle={{color: "#fff"}} cursor="C4C4C480" /> */}
+
         <Bar dataKey="pv" fill="#282D30" radius={[3, 3, 0, 0]} barSize={7} />
         <Bar dataKey="uv" fill="#E60000" radius={[3, 3, 0, 0]} barSize={7} />
+
       </BarChart>
     </ResponsiveContainer>
   );

@@ -32,13 +32,37 @@ const data = [
   },
 ];
 
-export default function Graph2TinyLine () {
+const CustomizedTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom_tooltip_graph2">
+        <p className="label_graph2">{`${payload[0].value}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
+
+export default function Graph2TinyLine() {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <LineChart className="graph2_tinyline" width={300} height={100} data={data}>
         <XAxis dataKey="name" stroke={""} padding={{ left: 10, right: 10 }} />
-        <Line type="natural" dataKey="pv" stroke="#fff" strokeWidth={2} dot={false} activeDot={{ r: 4 }} />
-        <Tooltip cursor={false} data={data.pv} />
+
+        <Line
+          type="natural"
+          stroke="#fff"
+          strokeWidth={2}
+          dot={false}
+          activeDot={{ r: 4 }}
+          dataKey="pv"
+          barSize={20}
+          fill="#8884d8"
+          name="Name"
+        />
+
+        <Tooltip content={<CustomizedTooltip />} cursor={false} />
       </LineChart>
     </ResponsiveContainer>
   );
