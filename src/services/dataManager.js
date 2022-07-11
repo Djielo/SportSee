@@ -10,15 +10,26 @@ import mockedData from "./mockedData";
  * extractFromMockedData function.
  */
 
+/**
+ * It returns a promise that resolves to an object containing four properties, each of which is the
+ * result of calling a function that returns a promise.
+ * @param userId - the user id to extract data for
+ * @param mocked - boolean
+ * @returns An object with 4 properties.
+ */
+
 async function getData(userId, mocked) {
-  
   if (mocked) {
     return {
       userMain: extractFromMockedData(userId, mockedData.USER_MAIN_DATA),
+      userActivity: extractFromMockedData(userId, mockedData.USER_ACTIVITY ),
+      userSessions: extractFromMockedData(userId, mockedData.USER_AVERAGE_SESSIONS),
+      userPerformance: extractFromMockedData(userId, mockedData.USER_PERFORMANCE)
     };
   }
   //
 }
+console.log("getData", getData.userMain)
 
 /**
  * [extractFromMockedData description]
@@ -33,14 +44,14 @@ async function getData(userId, mocked) {
  * It takes a userId and an array of objects, and returns an array of objects that have the same userId
  * as the one passed in
  * @param userId - The userId of the user you want to extract data from
- * @param data - the mocked data
+ * @param datas - the mocked datas
  * 
  * @returns An array of objects that match the userId.
  */
 
-function extractFromMockedData(userId, data) {
-  console.log(extractFromMockedData)
-  return data.filter((data) => {
+function extractFromMockedData(userId, datas) {
+  console.log(datas)
+  return datas.filter((data) => {
     if (data.userId === userId) return data;
   });
 }
