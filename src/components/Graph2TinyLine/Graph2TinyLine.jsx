@@ -46,8 +46,22 @@ const CustomizedTooltip = ({ active, payload }) => {
 
 export default function Graph2TinyLine() {
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <LineChart className="graph2_tinyline" width={300} height={100} data={data}>
+    <ResponsiveContainer width="100%" height="100%" >
+      <LineChart
+        className="graph2_tinyline "
+        width={300}
+        height={100}
+        data={data}
+        onMouseMove={(e) => {
+          if (e.isTooltipActive === true) {
+            let div = document.querySelector(".graph2");
+            let windowWidth = div.clientWidth;
+            let mouseXpercentage = Math.round((e.activeCoordinate.x / windowWidth) * 100);
+            // @ts-ignore
+            div.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${mouseXpercentage}%, rgba(175,0,0,1.5) ${mouseXpercentage}%, rgba(175,0,0,1.5) 100%)`;
+          }
+        }}
+      >
         <XAxis dataKey="name" stroke={""} padding={{ left: 10, right: 10 }} />
 
         <Line

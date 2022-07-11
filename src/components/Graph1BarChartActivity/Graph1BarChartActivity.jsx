@@ -53,7 +53,6 @@ const CustomizedTooltip = ({ active, payload }) => {
   return null;
 };
 
-
 export default function Graph1BarChartActivity() {
   return (
     <ResponsiveContainer width="100%" aspect={3}>
@@ -73,13 +72,12 @@ export default function Graph1BarChartActivity() {
         <XAxis dataKey="name" tickLine={false} tickSize={15} scale={"point"} padding={{ left: 10.2, right: 8.2 }} />
         <YAxis orientation="right" domain={[69, 71]} tickCount={3} stroke={""} tickSize={40} />
 
-        <Tooltip content={<CustomizedTooltip />} cursor={false} />
+        <Tooltip content={<CustomizedTooltip />} />
 
         {/* <Tooltip contentStyle={{ backgroundColor: "#e60000", color: "#fff" }} itemStyle={{color: "#fff"}} cursor="C4C4C480" /> */}
 
         <Bar dataKey="pv" fill="#282D30" radius={[3, 3, 0, 0]} barSize={7} />
         <Bar dataKey="uv" fill="#E60000" radius={[3, 3, 0, 0]} barSize={7} />
-
       </BarChart>
     </ResponsiveContainer>
   );
