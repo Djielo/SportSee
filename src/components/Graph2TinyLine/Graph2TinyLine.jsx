@@ -46,9 +46,9 @@ const CustomizedTooltip = ({ active, payload }) => {
 
 export default function Graph2TinyLine() {
   return (
-    <ResponsiveContainer width="100%" height="100%" >
+    <ResponsiveContainer width="100%" height="100%">
       <LineChart
-        className="graph2_tinyline "
+        className="graph2_tinyline"
         width={300}
         height={100}
         data={data}

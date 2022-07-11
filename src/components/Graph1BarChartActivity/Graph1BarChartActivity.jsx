@@ -64,12 +64,12 @@ export default function Graph1BarChartActivity() {
         margin={{
           top: 5,
           right: 30,
-          left: 20,
+          left: 50,
           bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
-        <XAxis dataKey="name" tickLine={false} tickSize={15} scale={"point"} padding={{ left: 10.2, right: 8.2 }} />
+        <XAxis dataKey="name" tickLine={false} tickSize={15} padding={{ left: -47, right: -48 }} />
         <YAxis orientation="right" domain={[69, 71]} tickCount={3} stroke={""} tickSize={40} />
 
         <Tooltip content={<CustomizedTooltip />} />
