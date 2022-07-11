@@ -3,11 +3,6 @@ import { useEffect } from "react";
 import { createContext } from "react";
 import { useState } from "react";
 
-// export default React.createContext({
-// data: [],
-// setData: () => {}
-// })
-
 const DataContext = createContext(undefined);
 
 const DataContextProvider = ({children}) => {
