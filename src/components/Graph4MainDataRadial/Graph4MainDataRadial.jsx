@@ -19,10 +19,10 @@ const ContentLegend = () => {
   return <span> Score </span>;
 };
 
-export default function Graph4Radial() {
+export default function Graph4MainDataRadial() {
   return (
     <RadialBarChart
-      className="graph4_radial"
+      className="graph4_mainData_radial"
       width={500}
       height={300}
       cx={150}
@@ -36,7 +36,7 @@ export default function Graph4Radial() {
     >
       <PolarAngleAxis type="number" domain={[0, 100]} angleAxisId={0} tick={false} />
       <RadialBar
-        className="graph4_score"
+        className="graph4_mainData_score"
         minAngle={15}
         label={{ position: "center", fill: "#000" }}
         background

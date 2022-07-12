@@ -40,12 +40,12 @@ const data = [
   },
 ];
 
-export default function Graph3Radar() {
+export default function Graph3PerformanceRadar() {
   return (
     <ResponsiveContainer>
-      <RadarChart className="graph3_radar"outerRadius={85} width={258} height={263} data={data}>
+      <RadarChart className="graph3_performance_radar" outerRadius={85} width={258} height={263} data={data}>
         <PolarGrid />
-        <PolarAngleAxis dataKey="subject" />        
+        <PolarAngleAxis dataKey="subject" />
         <Radar name="Mike" dataKey="A" stroke="rgba(255,1,1,0.7)" fill="rgba(255,1,1,0.7)" />
       </RadarChart>
     </ResponsiveContainer>
