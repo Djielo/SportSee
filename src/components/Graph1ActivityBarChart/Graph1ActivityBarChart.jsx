@@ -43,9 +43,9 @@ const data = [
 const CustomizedTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="custom_tooltip_graph1">
-        <p className="label_graph1_1">{`${payload[0].value}`}</p>
-        <p className="label_graph1_2">{`${payload[1].value}`}</p>
+      <div className="custom_tooltip_graph1_activity">
+        <p className="label_graph1_activity_1">{`${payload[0].value}`}</p>
+        <p className="label_graph1_activity_2">{`${payload[1].value}`}</p>
       </div>
     );
   }
@@ -53,11 +53,11 @@ const CustomizedTooltip = ({ active, payload }) => {
   return null;
 };
 
-export default function Graph1BarChartActivity() {
+export default function Graph1ActivityBarChart() {
   return (
     <ResponsiveContainer width="100%" aspect={3}>
       <BarChart
-        className="graph1_barChart_activity"
+        className="graph1_activity_barChart_activity"
         width={740}
         height={196}
         data={data}

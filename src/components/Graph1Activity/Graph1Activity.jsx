@@ -1,12 +1,12 @@
 import React from "react";
 import OvalWeight from "../../assets/oval_weight.png";
 import OvalBurned from "../../assets/oval_burned.png";
-import Graph1BarChartActivity from "../Graph1BarChartActivity/Graph1BarChartActivity";
+import Graph1ActivityBarChart from "../Graph1ActivityBarChart/Graph1ActivityBarChart";
 
-const Graph1 = () => {
+const Graph1Activity = () => {
   return (
-    <div className="graph1">
-      <div className="graph1_header">
+    <div className="graph1_activity">
+      <div className="graph1_activity_header">
         <h4 className="header_title">Activité quotidienne</h4>
         <div className="header_legend">
           <div className="legend_weight">
@@ -19,9 +19,9 @@ const Graph1 = () => {
           </div>
         </div>
       </div>
-      <Graph1BarChartActivity/>
+      <Graph1ActivityBarChart />
     </div>
   );
 };
 
-export default Graph1;
+export default Graph1Activity;

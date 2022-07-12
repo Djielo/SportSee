@@ -1,11 +1,11 @@
-.graph1 {
+.graph1_activity {
   background-color: #fbfbfb;
   border-radius: 5px;
   width: 835px;
   height: 320px;
   margin-bottom: 28px;
 
-  .graph1_header {
+  .graph1_activity_header {
     display: flex;
     justify-content: space-between;
     padding: 0 25px 0 25px;
@@ -43,7 +43,7 @@
     }
   }
   .graph1_barChart_activity {
-    height: 196px;    
+    height: 196px;
 
     tspan {
       fill: #9b9eac;
@@ -51,7 +51,7 @@
   }
 }
 
-.custom_tooltip_graph1 {
+.custom_tooltip_graph1_activity {
   min-width: 39px;
   min-height: 63px;
   width: fit-content;
@@ -63,8 +63,8 @@
   justify-content: space-between;
   align-items: center;
 
-  .label_graph1_1,
-  .label_graph1_2 {
+  .label_graph1_activity_1,
+  .label_graph1_activity_2 {
     font-size: 7px;
     font-weight: 500;
     color: #fff;

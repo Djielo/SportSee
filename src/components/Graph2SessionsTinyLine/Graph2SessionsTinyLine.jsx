@@ -35,8 +35,8 @@ const data = [
 const CustomizedTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
-      <div className="custom_tooltip_graph2">
-        <p className="label_graph2">{`${payload[0].value}`}</p>
+      <div className="custom_tooltip_graph2_sessions">
+        <p className="label_graph2_sessions">{`${payload[0].value}`}</p>
       </div>
     );
   }
@@ -44,17 +44,17 @@ const CustomizedTooltip = ({ active, payload }) => {
   return null;
 };
 
-export default function Graph2TinyLine() {
+export default function Graph2SessionsTinyLine() {
   return (
     <ResponsiveContainer width="100%" height="100%">
       <LineChart
-        className="graph2_tinyline"
+        className="graph2_sessions_tinyline"
         width={300}
         height={100}
         data={data}
         onMouseMove={(e) => {
           if (e.isTooltipActive === true) {
-            let div = document.querySelector(".graph2");
+            let div = document.querySelector(".graph2_sessions");
             let windowWidth = div.clientWidth;
             let mouseXpercentage = Math.round((e.activeCoordinate.x / windowWidth) * 100);
             // @ts-ignore

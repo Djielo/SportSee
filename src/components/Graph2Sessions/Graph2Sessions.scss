@@ -1,4 +1,4 @@
-.graph2 {
+.graph2_sessions {
   background-color: #ff0000;
   width: 258px;
   height: 263px;
@@ -8,7 +8,7 @@
   border-radius: 5px;
   // background: linear-gradient(270deg, rgba(255, 255, 255, 0.021) 0%, rgba(0, 0, 0, 0.212) 25%, rgba(0, 0, 0, 0) 100%);
 
-  .graph2_title {
+  .graph2_sessions_title {
     color: #ffffff70;
     font-size: 15px;
     font-weight: 500;
@@ -16,14 +16,14 @@
     width: 200px;
   }
 
-  .graph2_tinyline tspan {
+  .graph2_sessions_tinyline tspan {
     fill: #ffffff70;
     font-size: 12px;
     font-weight: 500;
     padding: 10px;
   }
 
-  .custom_tooltip_graph2 {
+  .custom_tooltip_graph2_sessions {
     min-width: 39px;
     min-height: 25px;
     width: fit-content;
@@ -31,7 +31,7 @@
     background-color: #fff;
     padding: 5px;
 
-    .label_graph2{
+    .label_graph2_sessions {
       text-align: center;
       font-size: 8px;
       font-weight: 500;
