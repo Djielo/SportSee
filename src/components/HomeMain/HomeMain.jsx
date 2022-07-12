@@ -4,7 +4,7 @@ import Graph1Activity from "../Graph1Activity/Graph1Activity";
 import Graph2Sessions from "../Graph2Sessions/Graph2Sessions";
 import Graph3Performance from "../Graph3Performance/Graph3Performance";
 import Graph4MainData from "../Graph4MainData/Graph4MainData";
-import DataCards from "../DatasCards/DatasCards";
+import CardsMainData from "../CardsMainData/CardsMainData";
 
 const HomeMain = () => {
   return (
@@ -20,7 +20,7 @@ const HomeMain = () => {
               <Graph4MainData />
             </div>
           </div>
-          <DataCards />
+          <CardsMainData />
         </div>
       </div>
     </div>

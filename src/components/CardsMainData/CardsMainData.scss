@@ -1,11 +1,11 @@
-.datas {
+.card_generic_mainData {
   // background-color: rgb(100, 92, 82);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 39px;
-  
-  .datas_element {
+
+  .card_generic_mainData_element {
     width: 258px;
     height: 124px;
     display: flex;

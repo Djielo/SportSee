@@ -1,8 +1,8 @@
 import React from "react";
 
-const DataGenericCard = ({icon, data, category}) => {
+const CardGenericMainData = ({ icon, data, category }) => {
   return (
-    <div className="datas_element">
+    <div className="card_generic_mainData_element">
       <img className="element_img" src={icon} alt="calories_icon" />
       <div className="element_details">
         <h2 className="details_title">{data}</h2>
@@ -12,4 +12,4 @@ const DataGenericCard = ({icon, data, category}) => {
   );
 };
 
-export default DataGenericCard;
+export default CardGenericMainData;
