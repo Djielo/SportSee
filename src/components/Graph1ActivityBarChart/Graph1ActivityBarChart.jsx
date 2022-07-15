@@ -1,66 +1,28 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
-
-const data = [
-  {
-    name: "1",
-    uv: 70,
-    pv: 69.8,
-  },
-  {
-    name: "2",
-    uv: 69.7,
-    pv: 69.3,
-  },
-  {
-    name: "3",
-    uv: 70.4,
-    pv: 69.6,
-  },
-  {
-    name: "4",
-    uv: 70.5,
-    pv: 70.1,
-  },
-  {
-    name: "5",
-
-    uv: 70.4,
-    pv: 70.3,
-  },
-  {
-    name: "6",
-    uv: 69.4,
-    pv: 69.1,
-  },
-  {
-    name: "7",
-    uv: 70.8,
-    pv: 70.4,
-  },
-];
-
-const CustomizedTooltip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="custom_tooltip_graph1_activity">
-        <p className="label_graph1_activity_1">{`${payload[0].value}`}</p>
-        <p className="label_graph1_activity_2">{`${payload[1].value}`}</p>
-      </div>
-    );
-  }
-
-  return null;
-};
+import { DataContext } from "../../Context/DataContext";
 
 export default function Graph1ActivityBarChart() {
+  const allData = useContext(DataContext);
+  const activity = allData?.activity.data.sessions;
+  // const newDay = new Date({day:activity})
+  // const dayNumber = newDay.getDay();
+  // console.log(newDay);
+  let activityDisplay = activity?.map(({ day, kilogram, calories }) => {
+    // let dayOfDate = day;
+    // dayOfDate = new Date(dayOfDate);
+    // day = dayOfDate.getDate();
+    // console.log({ day, kilogram, calories });
+    return { day: day = new Date(day).getDate(), kilogram: kilogram, calories: calories };
+  });
+
   return (
     <ResponsiveContainer width="100%" aspect={3}>
       <BarChart
         className="graph1_activity_barChart_activity"
         width={740}
         height={196}
-        data={data}
+        data={activityDisplay}
         margin={{
           top: 5,
           right: 30,
@@ -69,16 +31,28 @@ export default function Graph1ActivityBarChart() {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
-        <XAxis dataKey="name" tickLine={false} tickSize={15} padding={{ left: -47, right: -48 }} />
-        <YAxis orientation="right" domain={[69, 71]} tickCount={3} stroke={""} tickSize={40} />
+        <XAxis dataKey="day" tickLine={false} tickSize={15} padding={{ left: -47, right: -48 }} />
+        <YAxis yAxisId="kilogram" orientation="right" domain={["dataMin -1", "dataMax +1"]} tickCount={3} stroke={""} tickSize={40} />
+        <YAxis yAxisId="calories" hide />
 
         <Tooltip content={<CustomizedTooltip />} />
 
-        {/* <Tooltip contentStyle={{ backgroundColor: "#e60000", color: "#fff" }} itemStyle={{color: "#fff"}} cursor="C4C4C480" /> */}
-
-        <Bar dataKey="pv" fill="#282D30" radius={[3, 3, 0, 0]} barSize={7} />
-        <Bar dataKey="uv" fill="#E60000" radius={[3, 3, 0, 0]} barSize={7} />
+        <Bar yAxisId="kilogram" dataKey="kilogram" fill="#282D30" radius={[3, 3, 0, 0]} barSize={7} />
+        <Bar yAxisId="calories" dataKey="calories" fill="#E60000" radius={[3, 3, 0, 0]} barSize={7} />
       </BarChart>
     </ResponsiveContainer>
   );
 }
+
+const CustomizedTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom_tooltip_graph1_activity">
+        <p className="label_graph1_activity_kilo">{`${payload[0].value} Kg`}</p>
+        <p className="label_graph1_activity_cal">{`${payload[1].value} kCal`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};

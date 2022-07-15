@@ -1,14 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { RadialBarChart, PolarAngleAxis, RadialBar, Legend } from "recharts";
-import { getData } from "../../services/dataManager";
-
-const data = [
-  {
-    uv: 12,
-    pv: 100,
-    fill: "#ff0000",
-  },
-];
+import { DataContext } from "../../Context/DataContext";
 
 const style = {
   top: 20,
@@ -20,6 +12,16 @@ const ContentLegend = () => {
 };
 
 export default function Graph4MainDataRadial() {
+  const allData = useContext(DataContext);
+  const score = allData?.user.data.score;
+
+  const data = [
+    {
+      uv: score * 100,
+      fill: "#ff0000",
+    },
+  ];
+
   return (
     <RadialBarChart
       className="graph4_mainData_radial"

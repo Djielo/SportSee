@@ -1,57 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
-
-const data = [
-  {
-    name: "L",
-    pv: 150,
-  },
-  {
-    name: "M",
-    pv: 80,
-  },
-  {
-    name: "M",
-    pv: 260,
-  },
-  {
-    name: "J",
-    pv: 190,
-  },
-  {
-    name: "V",
-    pv: 70,
-  },
-  {
-    name: "S",
-    pv: 150,
-  },
-  {
-    name: "D",
-    pv: 230,
-  },
-];
-
-const CustomizedTooltip = ({ active, payload }) => {
-  if (active && payload && payload.length) {
-    return (
-      <div className="custom_tooltip_graph2_sessions">
-        <p className="label_graph2_sessions">{`${payload[0].value}`}</p>
-      </div>
-    );
-  }
-
-  return null;
-};
+import { DataContext } from "../../Context/DataContext";
 
 export default function Graph2SessionsTinyLine() {
+  const allData = useContext(DataContext);
+const average = allData?.average.data.sessions
+console.log(allData?.average.data.sessions);
+let average2 = average?.map(({day, sessionLength })=> {return {name: day, pv: sessionLength}})
   return (
     <ResponsiveContainer width="100%" height="100%">
       <LineChart
         className="graph2_sessions_tinyline"
         width={300}
         height={100}
-        data={data}
+        data={average2}
         onMouseMove={(e) => {
           if (e.isTooltipActive === true) {
             let div = document.querySelector(".graph2_sessions");
@@ -81,3 +43,15 @@ export default function Graph2SessionsTinyLine() {
     </ResponsiveContainer>
   );
 }
+
+const CustomizedTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom_tooltip_graph2_sessions">
+        <p className="label_graph2_sessions">{`${payload[0].value}`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};

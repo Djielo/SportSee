@@ -1,5 +1,7 @@
 import React from "react";
+import { useContext } from "react";
 import { Radar, RadarChart, PolarGrid, PolarAngleAxis, ResponsiveContainer } from "recharts";
+import { DataContext } from "../../Context/DataContext";
 
 const data = [
   {
@@ -41,6 +43,11 @@ const data = [
 ];
 
 export default function Graph3PerformanceRadar() {
+  // const allData = useContext(DataContext);
+  // const averageArray = allData?.performance.data["value", "kind"]
+  // const averageKind = allData?.performance.data.kind
+  // console.log(averageArray);
+  // console.log(averageKind);
   return (
     <ResponsiveContainer>
       <RadarChart className="graph3_performance_radar" outerRadius={85} width={258} height={263} data={data}>

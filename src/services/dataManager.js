@@ -1,3 +1,4 @@
+import axios from "axios";
 import mockedData from "./mockedData";
 
 /**
@@ -10,16 +11,8 @@ import mockedData from "./mockedData";
  * extractFromMockedData function.
  */
 
-/**
- * It returns a promise that resolves to an object containing four properties, each of which is the
- * result of calling a function that returns a promise.
- * @param userId - the user id to extract data for
- * @param mocked - boolean
- * @returns An object with 4 properties.
- */
-console.log(mockedData)
-
 async function getData(userId, mocked) {
+  const res = await axios.get(userId);
   if (mocked) {
     return {
       userMain: extractFromMockedData(userId, mockedData.USER_MAIN_DATA),
@@ -27,7 +20,11 @@ async function getData(userId, mocked) {
       userSessions: extractFromMockedData(userId, mockedData.USER_AVERAGE_SESSIONS),
       userPerformance: extractFromMockedData(userId, mockedData.USER_PERFORMANCE),
     };
+  } else {
+    return res.data.data;
   }
+  
+  
   //
 }
 
@@ -50,8 +47,9 @@ async function getData(userId, mocked) {
  */
 
 function extractFromMockedData(userId, datas) {
+  // eslint-disable-next-line
   return datas.filter((data) => {
-    if (data.userId === userId) return data;
+    if (data.userId === userId || data.id === userId) return data;
   });
 }
 

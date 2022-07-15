@@ -6,6 +6,8 @@ import Graph3Performance from "../Graph3Performance/Graph3Performance";
 import Graph4MainData from "../Graph4MainData/Graph4MainData";
 import CardsMainData from "../CardsMainData/CardsMainData";
 
+
+
 const HomeMain = () => {
   return (
     <div className="home_main">
