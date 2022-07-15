@@ -5,14 +5,10 @@ import { DataContext } from "../../Context/DataContext";
 export default function Graph1ActivityBarChart() {
   const allData = useContext(DataContext);
   const activity = allData?.activity.data.sessions;
-  // const newDay = new Date({day:activity})
-  // const dayNumber = newDay.getDay();
-  // console.log(newDay);
   let activityDisplay = activity?.map(({ day, kilogram, calories }) => {
     // let dayOfDate = day;
     // dayOfDate = new Date(dayOfDate);
     // day = dayOfDate.getDate();
-    // console.log({ day, kilogram, calories });
     return { day: day = new Date(day).getDate(), kilogram: kilogram, calories: calories };
   });
 
@@ -32,7 +28,7 @@ export default function Graph1ActivityBarChart() {
       >
         <CartesianGrid strokeDasharray="3 3" horizontal={true} vertical={false} />
         <XAxis dataKey="day" tickLine={false} tickSize={15} padding={{ left: -47, right: -48 }} />
-        <YAxis yAxisId="kilogram" orientation="right" domain={["dataMin -1", "dataMax +1"]} tickCount={3} stroke={""} tickSize={40} />
+        <YAxis yAxisId="kilogram" orientation="right" domain={["dataMin -1", "dataMax +2"]} tickCount={3} stroke={""} tickSize={50} />
         <YAxis yAxisId="calories" hide />
 
         <Tooltip content={<CustomizedTooltip />} />
@@ -48,8 +44,8 @@ const CustomizedTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
       <div className="custom_tooltip_graph1_activity">
-        <p className="label_graph1_activity_kilo">{`${payload[0].value} Kg`}</p>
-        <p className="label_graph1_activity_cal">{`${payload[1].value} kCal`}</p>
+        <p className="label_graph1_activity_kilo">{`${payload[0].value}Kg`}</p>
+        <p className="label_graph1_activity_cal">{`${payload[1].value}kCal`}</p>
       </div>
     );
   }

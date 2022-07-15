@@ -13,7 +13,7 @@ const ContentLegend = () => {
 
 export default function Graph4MainDataRadial() {
   const allData = useContext(DataContext);
-  const score = allData?.user.data.score;
+  const score = allData?.user.data.score || allData?.user.data.todayScore;
 
   const data = [
     {

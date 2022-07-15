@@ -2,11 +2,16 @@ import React, { useContext } from "react";
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { DataContext } from "../../Context/DataContext";
 
+const dayInLetter = (day) => {
+  return ["L", "M", "M", "J", "V", "S", "D"][day];
+};
+
 export default function Graph2SessionsTinyLine() {
   const allData = useContext(DataContext);
-const average = allData?.average.data.sessions
-console.log(allData?.average.data.sessions);
-let average2 = average?.map(({day, sessionLength })=> {return {name: day, pv: sessionLength}})
+  const average = allData?.average.data.sessions;
+  let average2 = average?.map(({ day, sessionLength }) => {
+    return { name: dayInLetter(day-1), pv: sessionLength };
+  });
   return (
     <ResponsiveContainer width="100%" height="100%">
       <LineChart
@@ -15,12 +20,14 @@ let average2 = average?.map(({day, sessionLength })=> {return {name: day, pv: se
         height={100}
         data={average2}
         onMouseMove={(e) => {
+          let div = document.querySelector(".graph2_sessions");
           if (e.isTooltipActive === true) {
-            let div = document.querySelector(".graph2_sessions");
             let windowWidth = div.clientWidth;
             let mouseXpercentage = Math.round((e.activeCoordinate.x / windowWidth) * 100);
             // @ts-ignore
             div.style.background = `linear-gradient(90deg, rgba(255,0,0,1) ${mouseXpercentage}%, rgba(175,0,0,1.5) ${mouseXpercentage}%, rgba(175,0,0,1.5) 100%)`;
+          } else {
+            div.style.background = "#ff0000"
           }
         }}
       >
@@ -48,7 +55,7 @@ const CustomizedTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
       <div className="custom_tooltip_graph2_sessions">
-        <p className="label_graph2_sessions">{`${payload[0].value}`}</p>
+        <p className="label_graph2_sessions">{`${payload[0].value} min`}</p>
       </div>
     );
   }

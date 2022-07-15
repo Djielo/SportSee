@@ -13,10 +13,10 @@ const CardsMainData = () => {
   if (allData === undefined) return <p>Loading</p>;
   return (
     <div className="card_generic_mainData">
-      <CardGenericMainData icon={CaloriesIcon} data={`${keyData.calorieCount}Kcal`} category={"Calories"} />
-      <CardGenericMainData icon={ProteinIcon} data={`${keyData.proteinCount}g`} category={"Proteines"} />
-      <CardGenericMainData icon={GlucidIcon} data={`${keyData.carbohydrateCount}g`} category={"Glucides"} />
-      <CardGenericMainData icon={LipidIcon} data={`${keyData.lipidCount}g`} category={"Lipides"} />
+      <CardGenericMainData icon={CaloriesIcon} data={`${keyData.calorieCount.toLocaleString("en-us")}Kcal`} category={"Calories"} />
+      <CardGenericMainData icon={ProteinIcon} data={`${keyData.proteinCount.toLocaleString("en-us")}g`} category={"Proteines"} />
+      <CardGenericMainData icon={GlucidIcon} data={`${keyData.carbohydrateCount.toLocaleString("en-us")}g`} category={"Glucides"} />
+      <CardGenericMainData icon={LipidIcon} data={`${keyData.lipidCount.toLocaleString("en-us")}g`} category={"Lipides"} />
     </div>
   );
 };
