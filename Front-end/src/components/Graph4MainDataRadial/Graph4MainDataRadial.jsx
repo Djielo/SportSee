@@ -11,6 +11,9 @@ const ContentLegend = () => {
   return <span> Score </span>;
 };
 
+/**
+ * This is a radial bar chart with a score that is positioned in the center.
+ */
 export default function Graph4MainDataRadial() {
   const allData = useContext(DataContext);
   const score = allData?.user.data.score || allData?.user.data.todayScore;
