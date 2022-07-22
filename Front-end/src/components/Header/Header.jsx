@@ -16,7 +16,7 @@ const Header = () => {
         <Link to="/user/18" className="nav_component">
           Réglage
         </Link>
-        <Link to="#" className="nav_component">
+        <Link to="*" className="nav_component">
           Communauté
         </Link>
       </nav>
