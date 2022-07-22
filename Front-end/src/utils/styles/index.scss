@@ -9,14 +9,13 @@
 @import "../../components/Graph3Performance/Graph3Performance.scss";
 @import "../../components/Graph4MainData/Graph4MainData.scss";
 @import "../../components//CardsMainData/CardsMainData.scss";
+@import "../../components//Loader/Loader.scss";
 
 /* GLOBAL */
 
 #root {
   width: 1440px;
   height: 1024px;
-  min-width: 1024px;
-  min-height: 780px;
 }
 
 body {

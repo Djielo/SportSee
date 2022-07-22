@@ -10,7 +10,7 @@ const CardsMainData = () => {
   const allData = useContext(DataContext);
   const keyData = allData?.user.data.keyData;
 
-  if (allData === undefined) return <p>Loading</p>;
+  if (allData === undefined) return <h1>LOADING</h1>;
   return (
     <div className="card_generic_mainData">
       <CardGenericMainData icon={CaloriesIcon} data={`${keyData.calorieCount.toLocaleString("en-us")}Kcal`} category={"Calories"} />

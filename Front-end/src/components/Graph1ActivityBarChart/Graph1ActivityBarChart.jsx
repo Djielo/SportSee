@@ -6,9 +6,6 @@ export default function Graph1ActivityBarChart() {
   const allData = useContext(DataContext);
   const activity = allData?.activity.data.sessions;
   let activityDisplay = activity?.map(({ day, kilogram, calories }) => {
-    // let dayOfDate = day;
-    // dayOfDate = new Date(dayOfDate);
-    // day = dayOfDate.getDate();
     return { day: day = new Date(day).getDate(), kilogram: kilogram, calories: calories };
   });
 

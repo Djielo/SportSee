@@ -1,5 +1,6 @@
 {
   "[javascriptreact]": {
     "editor.insertSpaces": false
-  }
+  },
+  "docwriter.style": "DocBlock"
 }

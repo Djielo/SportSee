@@ -24,7 +24,7 @@ const CardGenericMainData = ({ icon, data, category }) => {
 
 CardGenericMainData.propTypes = {
   icon : PropTypes.string.isRequired, 
-  data : PropTypes.object.isRequired, 
+  data : PropTypes.string.isRequired, 
   category : PropTypes.string.isRequired
 }
 

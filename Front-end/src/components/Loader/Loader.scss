@@ -1,0 +1,9 @@
+.spinner_container {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  
+  .spinner_loader {
+    width: 10rem;
+  }
+}

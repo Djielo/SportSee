@@ -44,6 +44,7 @@ const DataContext = createContext(undefined);
 
 const DataContextProvider = ({ children }) => {
   const [data, setData] = useState();
+  const [loading, setLoading] = useState(false);
   const currentUrl = useLocation();
   const userId = parseInt(currentUrl.pathname.split("/user/")[1]);
   const mocked = currentUrl.search === "?mocked";

@@ -9,12 +9,12 @@ function App() {
   return (
     <React.Fragment>
       <Header />
-      <DataContextProvider>
-        <Routes>
-          <Route path="/user/:userId" element={<Home />}/>
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </DataContextProvider>
+        <DataContextProvider>
+          <Routes>
+            <Route path="/user/:userId" element={<Home />} />
+            <Route path="*" element={<Error />} />
+          </Routes>
+        </DataContextProvider>
     </React.Fragment>
   );
 }
