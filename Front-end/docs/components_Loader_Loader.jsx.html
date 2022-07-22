@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/CardGenericMainData/CardGenericMainData.jsx</title>
+    <title>JSDoc: Source: components/Loader/Loader.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/CardGenericMainData/CardGenericMainData.jsx</h1>
+    <h1 class="page-title">Source: components/Loader/Loader.jsx</h1>
 
     
 
@@ -26,37 +26,23 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import React from "react";
-import PropTypes from "prop-types";
+            <pre class="prettyprint source linenums"><code>import spinner from '../../assets/spinner.svg'
 
 /**
- * [CardGenericMainData description]
- *
- * @param   {String}  icon      [icon description]
- * @param   {Object}  data      [data description]
- * @param   {String}  category  [category description]
- *
- * @component
+ * Render a loading spinner.
+ * @returns {JSX.Element}
+ * @constructor
  */
-const CardGenericMainData = ({ icon, data, category }) => {
+function Loader() {
   return (
-    &lt;div className="card_generic_mainData_element">
-      &lt;img className="element_img" src={icon} alt="calories_icon" />
-      &lt;div className="element_details">
-        &lt;h2 className="details_title">{data}&lt;/h2>
-        &lt;p className="details_name">{category}&lt;/p>
-      &lt;/div>
+    &lt;div className='spinner_container'>
+      &lt;img src={spinner} alt="loading spinner" className='spinner_loader'/>
     &lt;/div>
-  );
-};
+  )
+}
 
-CardGenericMainData.propTypes = {
-  icon: PropTypes.string.isRequired,
-  data: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-};
+export default Loader
 
-export default CardGenericMainData;
 </code></pre>
         </article>
     </section>

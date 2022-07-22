@@ -4,7 +4,8 @@ import { DataContext } from "../../Context/DataContext";
 const HomeMainHeader = () => {
   const allData = useContext(DataContext);
   const firstName = allData?.user.data.userInfos.firstName
-  if (firstName === undefined) return (<p>Loading</p>)
+  // if (firstName === undefined) return <><Loader/></>
+  // if (allData === undefined) return <><h1>LOADING</h1></>
   return (
     <div className="header_home_main">
       <h1 className="title">

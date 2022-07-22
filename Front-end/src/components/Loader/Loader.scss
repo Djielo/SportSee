@@ -1,9 +1,16 @@
 .spinner_container {
-  flex: 1;
-  display: grid;
-  place-items: center;
-  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(143, 80, 80, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .spinner_loader {
-    width: 10rem;
+    width: 200px;
+    height: 200px;
   }
 }

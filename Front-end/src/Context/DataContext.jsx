@@ -4,9 +4,14 @@
  *
  * @typedef {Object} userData
  * @property {Number} id
- * @property {keyData} keyData
- * @property {Number}  score
  * @property  {userInfo} userInfo
+ * @property {Number}  score
+ * @property {keyData} keyData
+ *
+ * @typedef {Object} userInfo
+ * @property {String} firstName
+ * @property {String} lastName
+ * @property {Number} age
  *
  * @typedef {Object} keyData
  * @property {Number} calorieCount
@@ -14,23 +19,48 @@
  * @property {Number} carbohydrateCount
  * @property {Number} lipidCount
  *
- * @typedef {Object} userInfo
- * @property {String} firstName
- * @property {String} lastName
- * @property {Number} age
- *
  * @typedef {Object} activityFromAxios
  * @property {activityData} data
  *
  * @typedef {Object} activityData
- * @property {Array.<sessionEntry>} sessions
  * @property {Number} userId
+ * @property {Array.<sessionEntry>} sessions
  *
  * @typedef {Object} sessionEntry
  * @property {String} day
  * @property {Number} kilogram
  * @property {Number} calories
  *
+ * @typedef {Object} averageSessionsFromAxios
+ * @property {averageSessionsData} data
+ *
+ * @typedef {Object} averageSessionsData
+ * @property {Number} userId
+ * @property {Array.<sessionEntry>} sessions
+ *
+ * @typedef {Object} sessionEntry
+ * @property {Number} day
+ * @property {Number} sessionLength
+ *
+ * @typedef {Object} performanceFromAxios
+ * @property {performanceData} data
+ *
+ * @typedef {Object} performanceData
+ * @property {Number} userId
+ * @property {kind} kind
+ * @property {Array.<dataEntry>} data
+ *
+ * @typedef {Object} kind
+ * @property {String} cardio
+ * @property {String} energy
+ * @property {String} endurance
+ * @property {String} strength
+ * @property {String} speed
+ * @property {String} intensity 
+ *
+ * @typedef {Object} dataEntry
+ * @property {Number} value
+ * @property {Number} kind
  */
 
 import axios from "axios";
@@ -39,12 +69,12 @@ import { createContext } from "react";
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import mockedData from "./mockedData";
+import PropTypes from "prop-types";
 
 const DataContext = createContext(undefined);
 
 const DataContextProvider = ({ children }) => {
-  const [data, setData] = useState();
-  const [loading, setLoading] = useState(false);
+  const [data, setData] = useState();  
   const currentUrl = useLocation();
   const userId = parseInt(currentUrl.pathname.split("/user/")[1]);
   const mocked = currentUrl.search === "?mocked";
@@ -74,8 +104,6 @@ const DataContextProvider = ({ children }) => {
           setData({ user, activity, performance, average });
         })
       );
-      console.log("ENDPOINTS", endpoints);
-      console.log("setData", setData());
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, mocked]);
@@ -88,9 +116,9 @@ const DataContextProvider = ({ children }) => {
  * userId as the one passed in
  *
  * @param {Number} userId - The userId of the user you want to extract data from
- * @param {Array.<userData> | Array.<activityData>} datas - the mocked datas
+ * @param {Array.<userData> | Array.<activityData> | Array.<averageSessionsData> | Array.<performanceData>} datas - the mocked datas
  *
- * @returns {userFromAxios | activityFromAxios}
+ * @returns {userFromAxios | activityFromAxios | averageSessionsFromAxios | performanceFromAxios}
  */
 function extractFromMockedData(userId, datas) {
   for (const data of datas) {
@@ -98,6 +126,13 @@ function extractFromMockedData(userId, datas) {
   }
 }
 
-
-
 export { DataContextProvider, DataContext };
+
+DataContextProvider.propTypes = {
+  children: PropTypes.object.isRequired,
+}
+
+extractFromMockedData.propTypes = {
+  userId: PropTypes.number.isRequired,
+  datas: PropTypes.array.isRequired
+}

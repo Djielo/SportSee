@@ -287,7 +287,7 @@
     
 
     
-    <h4 class="name" id="extractFromMockedData"><span class="type-signature"></span>extractFromMockedData<span class="signature">(userId, datas)</span><span class="type-signature"> &rarr; {userFromAxios|activityFromAxios}</span></h4>
+    <h4 class="name" id="extractFromMockedData"><span class="type-signature"></span>extractFromMockedData<span class="signature">(userId, datas)</span><span class="type-signature"> &rarr; {userFromAxios|activityFromAxios|averageSessionsFromAxios|performanceFromAxios}</span></h4>
     
 
     
@@ -365,6 +365,12 @@ userId as the one passed in</p>
 |
 
 <span class="param-type">Array.&lt;activityData></span>
+|
+
+<span class="param-type">Array.&lt;averageSessionsData></span>
+|
+
+<span class="param-type">Array.&lt;performanceData></span>
 
 
             
@@ -415,7 +421,7 @@ userId as the one passed in</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="Context_DataContext.jsx.html">Context/DataContext.jsx</a>, <a href="Context_DataContext.jsx.html#line93">line 93</a>
+        <a href="Context_DataContext.jsx.html">Context/DataContext.jsx</a>, <a href="Context_DataContext.jsx.html#line123">line 123</a>
     </li></ul></dd>
     
 
@@ -455,6 +461,12 @@ userId as the one passed in</p>
 |
 
 <span class="param-type">activityFromAxios</span>
+|
+
+<span class="param-type">averageSessionsFromAxios</span>
+|
+
+<span class="param-type">performanceFromAxios</span>
 
 
     </dd>
@@ -474,7 +486,7 @@ userId as the one passed in</p>
 
         
                 
-<h4 class="name" id="sessionEntry">sessionEntry</h4>
+<h4 class="name" id="dataEntry">dataEntry</h4>
 
 
 
@@ -567,13 +579,13 @@ userId as the one passed in</p>
 
         <tr>
             
-                <td class="name"><code>keyData</code></td>
+                <td class="name"><code>userInfo</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">keyData</span>
+<span class="param-type">userInfo</span>
 
 
             
@@ -613,13 +625,82 @@ userId as the one passed in</p>
 
         <tr>
             
-                <td class="name"><code>userInfo</code></td>
+                <td class="name"><code>keyData</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">userInfo</span>
+<span class="param-type">keyData</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>firstName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lastName</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>age</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
 
 
             
@@ -728,75 +809,6 @@ userId as the one passed in</p>
 
         <tr>
             
-                <td class="name"><code>firstName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>lastName</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">String</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>age</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">Number</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
                 <td class="name"><code>data</code></td>
             
 
@@ -820,13 +832,13 @@ userId as the one passed in</p>
 
         <tr>
             
-                <td class="name"><code>sessions</code></td>
+                <td class="name"><code>userId</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Array.&lt;<a href="global.html#sessionEntry">sessionEntry</a>></span>
+<span class="param-type">Number</span>
 
 
             
@@ -843,13 +855,13 @@ userId as the one passed in</p>
 
         <tr>
             
-                <td class="name"><code>userId</code></td>
+                <td class="name"><code>sessions</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">Number</span>
+<span class="param-type">Array.&lt;sessionEntry></span>
 
 
             
@@ -913,6 +925,397 @@ userId as the one passed in</p>
         <tr>
             
                 <td class="name"><code>calories</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">averageSessionsData</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sessions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;sessionEntry></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>day</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>sessionLength</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">performanceData</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>userId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>kind</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">kind</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>data</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;<a href="global.html#dataEntry">dataEntry</a>></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>cardio</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>energy</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>endurance</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>strength</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>speed</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>intensity</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>value</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>kind</code></td>
             
 
             <td class="type">
@@ -997,13 +1400,13 @@ userId as the one passed in</p>
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#CardGenericMainData">CardGenericMainData</a></li><li><a href="global.html#extractFromMockedData">extractFromMockedData</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="Loader.html">Loader</a></li></ul><h3>Global</h3><ul><li><a href="global.html#CardGenericMainData">CardGenericMainData</a></li><li><a href="global.html#extractFromMockedData">extractFromMockedData</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Mon Jul 18 2022 16:14:04 GMT+0200 (heure d’été d’Europe centrale)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Fri Jul 22 2022 11:35:01 GMT+0200 (heure d’été d’Europe centrale)
 </footer>
 
 <script> prettyPrint(); </script>

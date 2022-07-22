@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types"
+import PropTypes from "prop-types";
 
 /**
  * [CardGenericMainData description]
@@ -23,9 +23,9 @@ const CardGenericMainData = ({ icon, data, category }) => {
 };
 
 CardGenericMainData.propTypes = {
-  icon : PropTypes.string.isRequired, 
-  data : PropTypes.string.isRequired, 
-  category : PropTypes.string.isRequired
-}
+  icon: PropTypes.string.isRequired,
+  data: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+};
 
 export default CardGenericMainData;

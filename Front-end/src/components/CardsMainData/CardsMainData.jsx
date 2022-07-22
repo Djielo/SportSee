@@ -5,12 +5,14 @@ import ProteinIcon from "../../assets/icon_protein.svg";
 import GlucidIcon from "../../assets/icon_glucid.svg";
 import LipidIcon from "../../assets/icon_lipid.svg";
 import { DataContext } from "../../Context/DataContext";
+import Loader from "../Loader/Loader"
 
 const CardsMainData = () => {
   const allData = useContext(DataContext);
   const keyData = allData?.user.data.keyData;
 
-  if (allData === undefined) return <h1>LOADING</h1>;
+  // if (allData === undefined) return <h1>LOADING</h1>;
+  if (allData === undefined) return <><Loader/></>;
   return (
     <div className="card_generic_mainData">
       <CardGenericMainData icon={CaloriesIcon} data={`${keyData.calorieCount.toLocaleString("en-us")}Kcal`} category={"Calories"} />

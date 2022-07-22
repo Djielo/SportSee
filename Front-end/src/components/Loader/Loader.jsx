@@ -8,9 +8,9 @@ import spinner from '../../assets/spinner.svg'
 function Loader() {
   return (
     <div className='spinner_container'>
-      <img src={spinner} alt="loading spinner" className='spinner_loader'/>
+      <img src={spinner} alt="loading spinner" className='spinner_loader'/>      
     </div>
-  )
+    )
 }
 
 export default Loader
