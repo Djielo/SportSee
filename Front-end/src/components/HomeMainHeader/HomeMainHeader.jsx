@@ -1,6 +1,12 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../Context/DataContext";
 
+
+/**
+ * @function HomeMainHeader
+ *
+ * @return  {JSXElement} - Renders the header for the page.
+ */
 const HomeMainHeader = () => {
   const allData = useContext(DataContext);
   const firstName = allData?.user.data.userInfos.firstName

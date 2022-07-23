@@ -12,9 +12,9 @@ const ContentLegend = () => {
 };
 
 /**
- * This is a radial bar chart with a score that is positioned in the center.
+ * @return  {Object} - Returns a RadarChart component from the Recharts library that contains data related to the user's score, from the allData context object.
  */
-export default function Graph4MainDataRadial() {
+function Graph4MainDataRadial() {
   const allData = useContext(DataContext);
   const score = allData?.user.data.score || allData?.user.data.todayScore;
 
@@ -53,3 +53,5 @@ export default function Graph4MainDataRadial() {
     </RadialBarChart>
   );
 }
+
+export default Graph4MainDataRadial;

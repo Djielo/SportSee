@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Loader/Loader.jsx</title>
+    <title>JSDoc: Source: components/Graph4MainData/Graph4MainData.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Loader/Loader.jsx</h1>
+    <h1 class="page-title">Source: components/Graph4MainData/Graph4MainData.jsx</h1>
 
     
 
@@ -26,23 +26,24 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import spinner from '../../assets/spinner.svg'
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import Graph4MainDataRadial from "../Graph4MainDataRadial/Graph4MainDataRadial";
 
 /**
- * @function Loader
- * 
- * @returns {JSX.Element} - Allows to display a spinner during a loading action.
+ * @function Graph4Main - This function is responsible for rendering the main data for Graph4. This includes a text description of the data as well as the actual data represented in a radial graph.
+ *
+ * @return  {ReactElement} - Returns a div containing a paragraph and a Graph4MainDataRadial component.
  */
-function Loader() {
+function Graph4MainData() {
   return (
-    &lt;div className='spinner_container'>
-      &lt;img src={spinner} alt="loading spinner" className='spinner_loader'/>      
+    &lt;div className="graph4_mainData">
+      &lt;p className="graph4_mainData_text">de votre objectif&lt;/p>
+      &lt;Graph4MainDataRadial />
     &lt;/div>
-    )
-}
+  );
+};
 
-export default Loader
-
+export default Graph4MainData;
 </code></pre>
         </article>
     </section>

@@ -45,7 +45,7 @@
  * @typedef {Object} performanceFromAxios
  * @property {performanceData} data
  *
- * @typedef {Object} performanceData
+ * @typedef {Object} performance
  * @property {Number} userId
  * @property {kind} kind
  * @property {Array.<dataEntry>} data
@@ -56,7 +56,7 @@
  * @property {String} endurance
  * @property {String} strength
  * @property {String} speed
- * @property {String} intensity 
+ * @property {String} intensity
  *
  * @typedef {Object} dataEntry
  * @property {Number} value
@@ -73,30 +73,28 @@ import PropTypes from "prop-types";
 
 const DataContext = createContext(undefined);
 
+/**
+ *
+ * @param   {Object}  children - retreive all data
+ *  
+ * @return  {ReactElement} - Provide data to a child component through the React context. Data is pulled either from an API or from a mocked dataset.
+ */
 const DataContextProvider = ({ children }) => {
-  const [data, setData] = useState();  
+  const [data, setData] = useState();
   const currentUrl = useLocation();
   const userId = parseInt(currentUrl.pathname.split("/user/")[1]);
   const mocked = currentUrl.search === "?mocked";
 
-  axios.defaults.baseURL=`http://localhost:3000/user/${userId}`;
+  axios.defaults.baseURL = `http://localhost:3000/user/${userId}`;
+  const endpoints = [`/`, `/activity`, `/performance`, `/average-sessions`];
 
-  /* An array of strings. */
-  const endpoints = [
-    `/`,
-    `/activity`,
-    `/performance`,
-    `/average-sessions`,
-  ];
-  
-  /* A React hook that is called after every render. It is used to fetch data from the API. */
   useEffect(() => {
     if (mocked) {
       setData({
+        user: extractFromMockedData(userId, mockedData.USER_MAIN_DATA),
         activity: extractFromMockedData(userId, mockedData.USER_ACTIVITY),
         performance: extractFromMockedData(userId, mockedData.USER_PERFORMANCE),
         average: extractFromMockedData(userId, mockedData.USER_AVERAGE_SESSIONS),
-        user: extractFromMockedData(userId, mockedData.USER_MAIN_DATA),
       });
     } else {
       Promise.all(endpoints.map((endpoint) => axios.get(endpoint))).then(
@@ -111,28 +109,28 @@ const DataContextProvider = ({ children }) => {
   return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
 };
 
+
 /**
- * It takes a userId and an array of objects, and returns an array of objects that have the same
- * userId as the one passed in
  *
+ * @function extractFromMockedData
  * @param {Number} userId - The userId of the user you want to extract data from
- * @param {Array.<userData> | Array.<activityData> | Array.<averageSessionsData> | Array.<performanceData>} datas - the mocked datas
- *
- * @returns {userFromAxios | activityFromAxios | averageSessionsFromAxios | performanceFromAxios}
+ * @param {Array.<userData> | Array.<activityData> | Array.<averageSessionsData> | Array.<performanceData>} datas - the datas to extract from
+ * @returns {userFromAxios | activityFromAxios | averageSessionsFromAxios | performanceFromAxios} - the data extracted
  */
 function extractFromMockedData(userId, datas) {
   for (const data of datas) {
-    if (data.userId === userId || data.id === userId) return {data};
+    if (data.userId === userId || data.id === userId) return { data };
   }
 }
 
 export { DataContextProvider, DataContext };
 
+// PROPTYPES
 DataContextProvider.propTypes = {
   children: PropTypes.object.isRequired,
-}
+};
 
 extractFromMockedData.propTypes = {
   userId: PropTypes.number.isRequired,
-  datas: PropTypes.array.isRequired
-}
+  datas: PropTypes.array.isRequired,
+};

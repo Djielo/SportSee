@@ -1,7 +1,7 @@
 {
   "name": "base-code",
   "version": "0.1.0",
-  "homepage":"http://localhost:3000/user/12",
+  "homepage": "http://localhost:3000/user/12",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
-    "jsdoc": "^3.6.10",
+    "jsdoc": "^3.6.11",
     "node-sass": "^7.0.1",
     "react-scripts": "^5.0.1",
     "recharts": "^2.1.12"

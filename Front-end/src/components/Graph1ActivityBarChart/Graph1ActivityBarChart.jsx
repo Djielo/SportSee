@@ -1,7 +1,18 @@
+/**
+ * @typedef {Object} CustomizedTooltip
+ * @property {Boolean} active
+ * @property {Array} payload
+ */
+
 import React, { useContext } from "react";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 import { DataContext } from "../../Context/DataContext";
+import PropTypes from "prop-types";
 
+/**
+ *
+ * @returns {ReactElement} - The bar chart is rendered with the provided data context.
+ */
 export default function Graph1ActivityBarChart() {
   const allData = useContext(DataContext);
   const activity = allData?.activity.data.sessions;
@@ -37,6 +48,14 @@ export default function Graph1ActivityBarChart() {
   );
 }
 
+/**
+ * This function is responsible for displaying the user's session duration value in the specified window and updating the graph properties based on the values provided by the Graph1ActivityBarChart object.
+ *
+ * @param   {Boolean}  active - The active state of the graph is being updated based on the values provided by the Graph1ActivityBarChart.
+ * @param   {Array}  payload - The payload displays the user's session value related to the active bars of the graph.
+ * 
+ * @return  {ReactElement}
+ */
 const CustomizedTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -48,4 +67,10 @@ const CustomizedTooltip = ({ active, payload }) => {
   }
 
   return null;
+};
+
+// PROPTYPES
+CustomizedTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
 };

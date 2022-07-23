@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Loader/Loader.jsx</title>
+    <title>JSDoc: Source: components/HomeMainHeader/HomeMainHeader.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Loader/Loader.jsx</h1>
+    <h1 class="page-title">Source: components/HomeMainHeader/HomeMainHeader.jsx</h1>
 
     
 
@@ -26,23 +26,31 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import spinner from '../../assets/spinner.svg'
+            <pre class="prettyprint source linenums"><code>import React, { useContext } from "react";
+import { DataContext } from "../../Context/DataContext";
+
 
 /**
- * @function Loader
- * 
- * @returns {JSX.Element} - Allows to display a spinner during a loading action.
+ * @function HomeMainHeader
+ *
+ * @return  {JSXElement} - Renders the header for the page.
  */
-function Loader() {
+const HomeMainHeader = () => {
+  const allData = useContext(DataContext);
+  const firstName = allData?.user.data.userInfos.firstName
+  // if (firstName === undefined) return &lt;>&lt;Loader/>&lt;/>
+  // if (allData === undefined) return &lt;>&lt;h1>LOADING&lt;/h1>&lt;/>
   return (
-    &lt;div className='spinner_container'>
-      &lt;img src={spinner} alt="loading spinner" className='spinner_loader'/>      
+    &lt;div className="header_home_main">
+      &lt;h1 className="title">
+        Bonjour&lt;span className="firstname">{firstName}&lt;/span>
+      &lt;/h1>
+      &lt;p className="text">Félicitation ! Vous avez explosé vos objectifs hier 👏&lt;/p>
     &lt;/div>
-    )
-}
+  );
+};
 
-export default Loader
-
+export default HomeMainHeader;
 </code></pre>
         </article>
     </section>

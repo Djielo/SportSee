@@ -3,7 +3,12 @@ import OvalWeight from "../../assets/oval_weight.png";
 import OvalBurned from "../../assets/oval_burned.png";
 import Graph1ActivityBarChart from "../Graph1ActivityBarChart/Graph1ActivityBarChart";
 
-const Graph1Activity = () => {
+/**
+ * @function Graph1Activity - Displays a bar graph showing the user's weight and calories burned for each session of the week. The chart has a header with a title and a legend explaining the data.
+ *
+ * @return  {ReactElement}
+ */
+function Graph1Activity() {
   return (
     <div className="graph1_activity">
       <div className="graph1_activity_header">

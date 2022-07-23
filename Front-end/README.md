@@ -1,4 +1,3 @@
-![](src/assets/logo.png)
 <img src="src/assets/logo.png" width="200">
 
 # SportSee
@@ -11,7 +10,7 @@ In full growth, the company will today launch a new version of the user profile 
 The prerequisites for installing and viewing our application
 
 
->1. A code editor (this guide is based on Visual Studio Code)
+>1. A code editor (we will use Visual Studio Code [VSCode] for this guide)
 >2. Node.js must be installed on your computer
 >3. The browser of your choice (Optimized for Chrome and Firefox)
 
@@ -29,15 +28,17 @@ The prerequisites for installing and viewing our application
 >6. Choose a directory where the "SportSee" folder will be saved.
 >7. Click on "Open".
 >8. That's it! SportSee is open in VSCode!!
->9. Open your terminal (**Crtl+Ù**) then type "npm install" to install node_modules.
+>9. Right click on Back-end folder and choise "Open in integrated terminal" then type "npm install" to install node_modules.
+>10. Do the same with Front-end folder to install node_modules.
 
 #### Ready to go?
 
-***Three more steps and you can enjoy your new fitness tracking app.***
+***A few more steps and you can enjoy your new fitness tracking app.***
 
->10. Still in the terminal, type "npm start" to start your application.
->11. In the terminal, you should see "webpack compiled successfully".
->12. And your app should appear in your browser on port 3000 of localhost.
+>11. Still in the Back-end terminal, type "npm start" to start your back-end.
+>12. Do the same in Front-end terminal. You will be prompted to click "Y" to open the Front-end on another port ;-)
+>13. In the terminal, you should see "webpack compiled successfully".
+>14. And your app should appear in your browser on port 3001 of localhost.
 
 ## Support
 

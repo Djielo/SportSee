@@ -2,5 +2,7 @@
   "[javascriptreact]": {
     "editor.insertSpaces": false
   },
-  "docwriter.style": "DocBlock"
+  "docwriter.style": "JSDoc",
+  "docwriter.progress.trackTypes": true,
+  "docwriter.progress.trackClasses": true
 }

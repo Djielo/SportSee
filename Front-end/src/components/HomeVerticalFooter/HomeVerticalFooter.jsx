@@ -4,6 +4,12 @@ import Natation from "./../../assets/natation.svg";
 import Cyclisme from "./../../assets/cyclisme.svg";
 import Musculation from "./../../assets/musculation.svg";
 
+/**
+ * @function HomeVerticalFooter
+ *
+ * @return  {ReactElement} - Returns a vertical bar located on the left of the home page - It ontains the icons allowing access to the different sports, as well as a copyright.
+ *
+ */
 const HomeVerticalFooter = () => {
   return (
     <div className="vertical_bar">

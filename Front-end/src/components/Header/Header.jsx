@@ -2,7 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 import logo from "../../../src/assets/logo.svg";
 
-const Header = () => {
+/**
+ * This function creates a header with a logo and a navigation menu. The links in the navigation menu lead to different pages of the site.
+ *
+ * @return  {ReactElement} - Returns the HTML code of the header of the SportSee site
+ */
+function Header() {
   return (
     <div className="header">
       <img className="header_logo" src={logo} alt="logo du site SportSee" />

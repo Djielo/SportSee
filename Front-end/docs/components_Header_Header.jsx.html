@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Loader/Loader.jsx</title>
+    <title>JSDoc: Source: components/Header/Header.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Loader/Loader.jsx</h1>
+    <h1 class="page-title">Source: components/Header/Header.jsx</h1>
 
     
 
@@ -26,23 +26,38 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import spinner from '../../assets/spinner.svg'
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import { Link } from "react-router-dom";
+import logo from "../../../src/assets/logo.svg";
 
 /**
- * @function Loader
- * 
- * @returns {JSX.Element} - Allows to display a spinner during a loading action.
+ * This function creates a header with a logo and a navigation menu. The links in the navigation menu lead to different pages of the site.
+ *
+ * @return  {ReactElement} - Returns the HTML code of the header of the SportSee site
  */
-function Loader() {
+function Header() {
   return (
-    &lt;div className='spinner_container'>
-      &lt;img src={spinner} alt="loading spinner" className='spinner_loader'/>      
+    &lt;div className="header">
+      &lt;img className="header_logo" src={logo} alt="logo du site SportSee" />
+      &lt;nav className="header_nav">
+        &lt;Link to="/user/24?mocked" className="nav_component">
+          Accueil
+        &lt;/Link>
+        &lt;Link to="/user/12" className="nav_component">
+          Profil
+        &lt;/Link>
+        &lt;Link to="/user/18" className="nav_component">
+          Réglage
+        &lt;/Link>
+        &lt;Link to="*" className="nav_component">
+          Communauté
+        &lt;/Link>
+      &lt;/nav>
     &lt;/div>
-    )
-}
+  );
+};
 
-export default Loader
-
+export default Header;
 </code></pre>
         </article>
     </section>

@@ -1,9 +1,9 @@
 import spinner from '../../assets/spinner.svg'
 
 /**
- * Render a loading spinner.
- * @returns {JSX.Element}
- * @constructor
+ * @function Loader
+ * 
+ * @returns {JSX.Element} - Allows to display a spinner during a loading action.
  */
 function Loader() {
   return (

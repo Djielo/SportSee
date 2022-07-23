@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Graph4MainDataRadial/Graph4MainDataRadial.jsx</title>
+    <title>JSDoc: Source: components/CardsMainData/CardsMainData.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Graph4MainDataRadial/Graph4MainDataRadial.jsx</h1>
+    <h1 class="page-title">Source: components/CardsMainData/CardsMainData.jsx</h1>
 
     
 
@@ -27,62 +27,35 @@
     <section>
         <article>
             <pre class="prettyprint source linenums"><code>import React, { useContext } from "react";
-import { RadialBarChart, PolarAngleAxis, RadialBar, Legend } from "recharts";
+import CardGenericMainData from "../../components/CardGenericMainData/CardGenericMainData";
+import CaloriesIcon from "../../assets/icon_calories.svg";
+import ProteinIcon from "../../assets/icon_protein.svg";
+import GlucidIcon from "../../assets/icon_glucid.svg";
+import LipidIcon from "../../assets/icon_lipid.svg";
 import { DataContext } from "../../Context/DataContext";
 
-const style = {
-  top: 20,
-  lineHeight: "24px",
-};
-
-const ContentLegend = () => {
-  return &lt;span> Score &lt;/span>;
-};
-
 /**
- * @return  {Object} - Returns a RadarChart component from the Recharts library that contains data related to the user's score, from the allData context object.
+ * @function CardMainData - The function CardsMainData() renders four generic cards components. Each component displays a nutritional value (calories, protein, carbohydrate, or lipid count) for the current user.
+ * 
+ * @return  {ReactElement} - Returns a card for each macronutrient (calories, protein, carbohydrate, lipid) with the corresponding data pulled from the user's context.
  */
-function Graph4MainDataRadial() {
+function CardsMainData() {
   const allData = useContext(DataContext);
-  const score = allData?.user.data.score || allData?.user.data.todayScore;
+  const keyData = allData?.user.data.keyData;
 
-  const data = [
-    {
-      uv: score * 100,
-      fill: "#ff0000",
-    },
-  ];
-
+  if (allData === undefined) return &lt;h1>LOADING&lt;/h1>;
+  
   return (
-    &lt;RadialBarChart
-      className="graph4_mainData_radial"
-      width={500}
-      height={300}
-      cx={150}
-      cy={150}
-      innerRadius={80}
-      outerRadius={340}
-      barSize={10}
-      startAngle={-270}
-      endAngle={90}
-      data={data}
-    >
-      &lt;PolarAngleAxis type="number" domain={[0, 100]} angleAxisId={0} tick={false} />
-      &lt;RadialBar
-        className="graph4_mainData_score"
-        minAngle={15}
-        label={{ position: "center", fill: "#000" }}
-        background
-        clockWise
-        dataKey="uv"
-        cornerRadius={25}
-      />
-      &lt;Legend iconSize={0} width={500} height={300} layout="vertical" verticalAlign="middle" wrapperStyle={style} content={ContentLegend} />
-    &lt;/RadialBarChart>
+    &lt;div className="card_generic_mainData">
+      &lt;CardGenericMainData icon={CaloriesIcon} data={`${keyData.calorieCount.toLocaleString("en-us")}Kcal`} category={"Calories"} />
+      &lt;CardGenericMainData icon={ProteinIcon} data={`${keyData.proteinCount.toLocaleString("en-us")}g`} category={"Proteines"} />
+      &lt;CardGenericMainData icon={GlucidIcon} data={`${keyData.carbohydrateCount.toLocaleString("en-us")}g`} category={"Glucides"} />
+      &lt;CardGenericMainData icon={LipidIcon} data={`${keyData.lipidCount.toLocaleString("en-us")}g`} category={"Lipides"} />
+    &lt;/div>
   );
-}
+};
 
-export default Graph4MainDataRadial;
+export default CardsMainData;
 </code></pre>
         </article>
     </section>

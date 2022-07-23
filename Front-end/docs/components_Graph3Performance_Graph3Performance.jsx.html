@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Loader/Loader.jsx</title>
+    <title>JSDoc: Source: components/Graph3Performance/Graph3Performance.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Loader/Loader.jsx</h1>
+    <h1 class="page-title">Source: components/Graph3Performance/Graph3Performance.jsx</h1>
 
     
 
@@ -26,23 +26,23 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import spinner from '../../assets/spinner.svg'
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import Graph3PerformanceRadar from "../Graph3PerformanceRadar/Graph3PerformanceRadar";
 
 /**
- * @function Loader
- * 
- * @returns {JSX.Element} - Allows to display a spinner during a loading action.
+ * @function Graph3Performance - This function renders a radar graph component for visualizing performance data. It accepts a data prop containing performance data points, and renders a graph accordingly.
+ *
+ * @return  {ReactElement} - Returns a graph displaying the performance of the user using a radar chart.
  */
-function Loader() {
+function Graph3Performance() {
   return (
-    &lt;div className='spinner_container'>
-      &lt;img src={spinner} alt="loading spinner" className='spinner_loader'/>      
+    &lt;div className="graph3_performance">
+      &lt;Graph3PerformanceRadar />
     &lt;/div>
-    )
+  );
 }
 
-export default Loader
-
+export default Graph3Performance;
 </code></pre>
         </article>
     </section>

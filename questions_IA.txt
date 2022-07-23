@@ -1,0 +1,19 @@
+What is the return type of this function?
+
+What does this function return?
+
+What is the typing of this function?
+
+
+
+Write me the documentation for this function!
+
+
+
+What does this function do?
+
+
+
+what are the param and return of this function?
+
+what are the proptypes of this function?

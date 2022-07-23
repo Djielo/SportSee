@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Loader/Loader.jsx</title>
+    <title>JSDoc: Source: components/HomeVerticalFooter/HomeVerticalFooter.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Loader/Loader.jsx</h1>
+    <h1 class="page-title">Source: components/HomeVerticalFooter/HomeVerticalFooter.jsx</h1>
 
     
 
@@ -26,23 +26,33 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import spinner from '../../assets/spinner.svg'
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import Meditation from "./../../assets/meditation.svg";
+import Natation from "./../../assets/natation.svg";
+import Cyclisme from "./../../assets/cyclisme.svg";
+import Musculation from "./../../assets/musculation.svg";
 
 /**
- * @function Loader
- * 
- * @returns {JSX.Element} - Allows to display a spinner during a loading action.
+ * @function HomeVerticalFooter
+ *
+ * @return  {ReactElement} - Returns a vertical bar located on the left of the home page - It ontains the icons allowing access to the different sports, as well as a copyright.
+ *
  */
-function Loader() {
+const HomeVerticalFooter = () => {
   return (
-    &lt;div className='spinner_container'>
-      &lt;img src={spinner} alt="loading spinner" className='spinner_loader'/>      
+    &lt;div className="vertical_bar">
+      &lt;nav className="nav_vertical_bar">
+        &lt;img className="icon_vertical_bar" src={Meditation} alt="méditation" />
+        &lt;img className="icon_vertical_bar" src={Natation} alt="natation" />
+        &lt;img className="icon_vertical_bar" src={Cyclisme} alt="cyclisme" />
+        &lt;img className="icon_vertical_bar" src={Musculation} alt="musculation" />
+      &lt;/nav>
+      &lt;p className="text_vertical_bar">Copyright, SportSee 2020&lt;/p>
     &lt;/div>
-    )
-}
+  );
+};
 
-export default Loader
-
+export default HomeVerticalFooter;
 </code></pre>
         </article>
     </section>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: components/Loader/Loader.jsx</title>
+    <title>JSDoc: Source: components/Graph2Sessions/Graph2Sessions.jsx</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: components/Loader/Loader.jsx</h1>
+    <h1 class="page-title">Source: components/Graph2Sessions/Graph2Sessions.jsx</h1>
 
     
 
@@ -26,23 +26,24 @@
     
     <section>
         <article>
-            <pre class="prettyprint source linenums"><code>import spinner from '../../assets/spinner.svg'
+            <pre class="prettyprint source linenums"><code>import React from "react";
+import Graph2SessionsTinyLine from "../Graph2SessionsTinyLine/Graph2SessionsTinyLine";
 
 /**
- * @function Loader
- * 
- * @returns {JSX.Element} - Allows to display a spinner during a loading action.
+ * @function Graph2Sessions
+ *
+ * @return  {ReactElement} - This function is to display the average session duration for each session of the week.
  */
-function Loader() {
+function Graph2Sessions() {
   return (
-    &lt;div className='spinner_container'>
-      &lt;img src={spinner} alt="loading spinner" className='spinner_loader'/>      
+    &lt;div className="graph2_sessions">
+      &lt;h2 className="graph2_sessions_title">Durée moyenne des sessions&lt;/h2>
+      &lt;Graph2SessionsTinyLine />
     &lt;/div>
-    )
-}
+  );
+};
 
-export default Loader
-
+export default Graph2Sessions;
 </code></pre>
         </article>
     </section>
