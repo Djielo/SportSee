@@ -7,16 +7,17 @@ import PropTypes from "prop-types";
 /**
  * @function Graph3PerformanceRadar
  * @param {Object} allData - The performance data is retrieved from the DataContext and stored in the perfValue variable
- * 
+ *
  * @return  {Object} - Returns a RadarChart component from the Recharts library that displays a user's performance data. The data provided by destructuring the perfValue and perfKind objects, from the allData context object.
  */
 export default function Graph3PerformanceRadar() {
   const allData = useContext(DataContext);
   let perfValue = allData?.performance.data.data;
   let perfKind = allData?.performance.data.kind;
-
-  perfKind === undefined ? <h1>LOADING</h1> : (perfKind = Object.values(perfKind));
-
+  // perfKind.replace("cardio", "Cardio");
+  
+  !perfKind ? <h1>LOADING</h1> : (perfKind = Object.values(perfKind));
+  
   /**
    * @function perfKindDisplay
    * @returns {perfKindValue} - Returns the value of the key in the perfKind object that matches the dataKind parameter.
@@ -37,7 +38,7 @@ export default function Graph3PerformanceRadar() {
   });
 
   /**
-   * 
+   *
    */
   return (
     <>
@@ -58,5 +59,5 @@ export default function Graph3PerformanceRadar() {
 
 //PROPTYPES
 Graph3PerformanceRadar.propTypes = {
-  allData: PropTypes.object.isRequired,
+  allData: PropTypes.object,
 };

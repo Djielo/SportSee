@@ -33,4 +33,12 @@
   .graph4_mainData_radial tspan {
     fill: black;
   }
+
+  .graph4_mainData_score .recharts-label-list text tspan::after {
+    position: relative;
+    z-index: 2;
+    width: 10px;
+    height: 10px;
+    content: "%";
+  }
 }

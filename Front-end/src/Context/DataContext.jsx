@@ -76,7 +76,7 @@ const DataContext = createContext(undefined);
 /**
  *
  * @param   {Object}  children - retreive all data
- *  
+ *
  * @return  {ReactElement} - Provide data to a child component through the React context. Data is pulled either from an API or from a mocked dataset.
  */
 const DataContextProvider = ({ children }) => {
@@ -95,11 +95,13 @@ const DataContextProvider = ({ children }) => {
         activity: extractFromMockedData(userId, mockedData.USER_ACTIVITY),
         performance: extractFromMockedData(userId, mockedData.USER_PERFORMANCE),
         average: extractFromMockedData(userId, mockedData.USER_AVERAGE_SESSIONS),
+        loading: false,
       });
     } else {
+      setData({ loading: true });
       Promise.all(endpoints.map((endpoint) => axios.get(endpoint))).then(
         axios.spread(({ data: user }, { data: activity }, { data: performance }, { data: average }) => {
-          setData({ user, activity, performance, average });
+          setData({ user, activity, performance, average, loading: false });
         })
       );
     }
@@ -108,7 +110,6 @@ const DataContextProvider = ({ children }) => {
 
   return <DataContext.Provider value={data}>{children}</DataContext.Provider>;
 };
-
 
 /**
  *

@@ -38,9 +38,7 @@ export default function Graph1ActivityBarChart() {
         <XAxis dataKey="day" tickLine={false} tickSize={15} padding={{ left: -47, right: -48 }} />
         <YAxis yAxisId="kilogram" orientation="right" domain={["dataMin -1", "dataMax +2"]} tickCount={3} stroke={""} tickSize={50} />
         <YAxis yAxisId="calories" hide />
-
         <Tooltip content={<CustomizedTooltip />} />
-
         <Bar yAxisId="kilogram" dataKey="kilogram" fill="#282D30" radius={[3, 3, 0, 0]} barSize={7} />
         <Bar yAxisId="calories" dataKey="calories" fill="#E60000" radius={[3, 3, 0, 0]} barSize={7} />
       </BarChart>
