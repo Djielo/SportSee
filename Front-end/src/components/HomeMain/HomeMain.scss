@@ -6,8 +6,8 @@
   width: calc(1440px - 117px);
 
   .home_main_contents {
-    height: 779px;
-    width: 1126px;
+    max-height: 779px;
+    max-width: 1126px;
 
     .contents_all_datas {
       display: flex;
