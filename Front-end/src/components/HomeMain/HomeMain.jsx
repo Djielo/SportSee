@@ -6,11 +6,10 @@ import Graph3Performance from "../Graph3Performance/Graph3Performance";
 import Graph4MainData from "../Graph4MainData/Graph4MainData";
 import CardsMainData from "../CardsMainData/CardsMainData";
 
-
 /**
  * @function HomeMain
  *
- * @return  {JSXElement} - Returns a div component. This component contains the elements of the home page of the website. There is a header, graphs and maps with data.  
+ * @return  {JSXElement} - Returns a div component. This component contains the elements of the home page of the website. There is a header, graphs and maps with data.
  */
 const HomeMain = () => {
   return (

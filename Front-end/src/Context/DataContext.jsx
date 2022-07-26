@@ -94,14 +94,12 @@ const DataContextProvider = ({ children }) => {
         user: extractFromMockedData(userId, mockedData.USER_MAIN_DATA),
         activity: extractFromMockedData(userId, mockedData.USER_ACTIVITY),
         performance: extractFromMockedData(userId, mockedData.USER_PERFORMANCE),
-        average: extractFromMockedData(userId, mockedData.USER_AVERAGE_SESSIONS),
-        loading: false,
+        average: extractFromMockedData(userId, mockedData.USER_AVERAGE_SESSIONS),        
       });
     } else {
-      setData({ loading: true });
       Promise.all(endpoints.map((endpoint) => axios.get(endpoint))).then(
         axios.spread(({ data: user }, { data: activity }, { data: performance }, { data: average }) => {
-          setData({ user, activity, performance, average, loading: false });
+          setData({ user, activity, performance, average });
         })
       );
     }
