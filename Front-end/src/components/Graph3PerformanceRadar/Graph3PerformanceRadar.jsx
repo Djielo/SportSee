@@ -14,10 +14,21 @@ export default function Graph3PerformanceRadar() {
   const allData = useContext(DataContext);
   let perfValue = allData?.performance.data.data;
   let perfKind = allData?.performance.data.kind;
-  // perfKind.replace("cardio", "Cardio");
   
-  !perfKind ? <h1>LOADING</h1> : (perfKind = Object.values(perfKind));
-  
+  !perfKind ? (
+    <h1>LOADING</h1>
+  ) : (
+    (perfKind = Object.values(perfKind).map((kind) => {
+      if (kind === "cardio") return (kind = "Cardio");
+      if (kind === "energy") return (kind = "Energie");
+      if (kind === "endurance") return (kind = "Endurance");
+      if (kind === "strength") return (kind = "Force");
+      if (kind === "speed") return (kind = "Vitesse");
+      if (kind === "intensity") return (kind = "Intensité");
+      return kind;
+    }))
+  );
+  console.log(perfKind);
   /**
    * @function perfKindDisplay
    * @returns {perfKindValue} - Returns the value of the key in the perfKind object that matches the dataKind parameter.
@@ -25,7 +36,7 @@ export default function Graph3PerformanceRadar() {
   const perfKindDisplay = (dataKind) => {
     return perfKind[dataKind];
   };
-  
+
   /**
    *
    * @param   {Number}  value - The value related to the kind of activity performed by the user
@@ -36,7 +47,6 @@ export default function Graph3PerformanceRadar() {
   let perfValueByKind = perfValue?.map(({ value, kind }) => {
     return { value, kind: perfKindDisplay(kind - 1) };
   });
-
   /**
    *
    */
