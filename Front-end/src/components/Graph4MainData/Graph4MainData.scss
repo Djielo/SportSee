@@ -16,29 +16,17 @@
     position: absolute;
     top: 30%;
     left: 45%;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: 500;
   }
 
   .graph4_mainData_text {
     position: absolute;
-    top: 57%;
+    top: 50%;
     left: 48%;
     width: 60px;
     font-size: 16px;
     font-weight: 500;
     color: #74798c;
-  }
-
-  .graph4_mainData_radial tspan {
-    fill: black;
-  }
-
-  .graph4_mainData_score .recharts-label-list text tspan::after {
-    position: relative;
-    z-index: 2;
-    width: 10px;
-    height: 10px;
-    content: "%";
   }
 }

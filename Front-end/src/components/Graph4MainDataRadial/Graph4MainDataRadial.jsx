@@ -40,15 +40,16 @@ function Graph4MainDataRadial() {
       data={data}
     >
       <PolarAngleAxis type="number" domain={[0, 100]} angleAxisId={0} tick={false} />
-      <RadialBar
-        className="graph4_mainData_score"
+      <RadialBar        
         minAngle={15}
-        label={{ position: "center", fill: "#000" }}
         background
         clockWise
         dataKey="uv"
         cornerRadius={25}
       />
+      
+      <text fill="#000" cx="150" cy="150" offset="5" x="150" y="130" className="recharts-text recharts-label graph4_mainData_score" textAnchor="middle"><tspan x="150" dy="0.355em">{ data[0].uv }%</tspan></text>
+
       <Legend iconSize={0} width={500} height={300} layout="vertical" verticalAlign="middle" wrapperStyle={style} content={ContentLegend} />
     </RadialBarChart>
   );

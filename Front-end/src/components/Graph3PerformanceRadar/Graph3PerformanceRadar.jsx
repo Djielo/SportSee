@@ -14,7 +14,7 @@ export default function Graph3PerformanceRadar() {
   const allData = useContext(DataContext);
   let perfValue = allData?.performance.data.data;
   let perfKind = allData?.performance.data.kind;
-  
+
   !perfKind ? (
     <h1>LOADING</h1>
   ) : (
@@ -28,7 +28,7 @@ export default function Graph3PerformanceRadar() {
       return kind;
     }))
   );
-  console.log(perfKind);
+  
   /**
    * @function perfKindDisplay
    * @returns {perfKindValue} - Returns the value of the key in the perfKind object that matches the dataKind parameter.
