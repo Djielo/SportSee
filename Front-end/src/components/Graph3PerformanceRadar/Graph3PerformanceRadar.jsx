@@ -15,6 +15,9 @@ export default function Graph3PerformanceRadar() {
   let perfValue = allData?.performance.data.data;
   let perfKind = allData?.performance.data.kind;
 
+  /* A ternary operator that checks if the perfKind object is undefined. If it is undefined, it returns
+  a loading message. If it is not undefined, it returns the perfKind object with the values mapped
+  to a new array translated in French. */
   !perfKind ? (
     <h1>LOADING</h1>
   ) : (
