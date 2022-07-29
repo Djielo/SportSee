@@ -24,7 +24,7 @@ The prerequisites for installing and viewing our application
 >2. If it is not already done, close folder (**Ctrl+K then F**).
 >3. In the VSCode explorer, click on "Clone a repository".
 >4. Choose "Clone from Github".
->5. Then "Clone from URL".
+>5. Then "Clone from URL" and put this URL: https://github.com/Djielo/SportSee .
 >6. Choose a directory where the "SportSee" folder will be saved.
 >7. Click on "Open".
 >8. That's it! SportSee is open in VSCode!!
