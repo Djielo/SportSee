@@ -1,4 +1,4 @@
-<img src="src/assets/logo.png" width="200">
+<img src="./Front-end/src/assets/logo.png" width="200">
 
 # SportSee
 > Startup dedicated to sports coaching
